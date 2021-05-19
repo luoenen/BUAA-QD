@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.buaa.qd.dao.TopicDao">
+
+    <select id="getMaxTid" resultType="int" parameterType="string">
+        select max(tid) from topic where partitions = #{partitions};
+    </select>
+
+    <insert id="insertTopic" parameterType="Topic">
+        insert into topic(id,tid,title,description,content,uid,username,ip,partitions,timetag)
+        values (#{topic.id},#{topic.tid},#{topic.title},#{topic.description},#{topic.content},#{topic.uid},#{topic.username},
+                #{topic.ip},#{topic.partitions},now());
+    </insert>
+
+    <select id="getSizeRecord" resultType="int" parameterType="string">
+        select count(*) from topic where partitions = #{partitions};
+    </select>
+
+    <select id="getTopicPage" resultType="Topic">
+        select * from topic where partitions = #{partitions} order by tid desc limit #{page},#{pageSize};
+    </select>
+
+    <select id="getTopByTid" resultType="Topic" parameterType="int">
+        select * from topic where tid = #{tid};
+    </select>
+
+    <select id="getTopicByTidAndPartitions" resultType="Topic">
+        select * from topic where tid = #{tid} and partitions = #{partitions};
+    </select>
+
+</mapper>

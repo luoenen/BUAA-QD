@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="base" template="/WEB-INF/views/tiles/template.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+    </definition>
+
+    <definition name="index" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/index.jsp" />
+    </definition>
+
+    <definition name="collegeNews" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/collegeNews.jsp" />
+    </definition>
+
+    <definition name="knowledgeShare" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/knowledgeShare.jsp" />
+    </definition>
+
+    <definition name="technicalHelp" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/technicalHelp.jsp" />
+    </definition>
+
+    <definition name="softwareCollege" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/softwareCollege.jsp" />
+    </definition>
+
+    <definition name="integratedCircuitCollege" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/integratedCircuitCollege.jsp" />
+    </definition>
+
+    <definition name="employee" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/employee.jsp" />
+    </definition>
+
+    <definition name="practice" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/practice.jsp" />
+    </definition>
+
+    <definition name="anonymous" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/anonymous.jsp" />
+    </definition>
+
+    <definition name="search" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/search.jsp" />
+    </definition>
+
+    <definition name="app" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/app.jsp" />
+    </definition>
+
+    <definition name="user/register" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/user/register.jsp" />
+    </definition>
+
+    <definition name="user/login" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/user/login.jsp" />
+    </definition>
+
+    <definition name="error/error" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/error/error.jsp" />
+    </definition>
+
+    <definition name="user/home" extends="base">
+        <put-attribute name="main" value="/WEB-INF/views/user/home.jsp" />
+    </definition>
+</tiles-definitions>

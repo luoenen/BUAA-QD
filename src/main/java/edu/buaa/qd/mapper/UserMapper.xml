@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.buaa.qd.dao.UserDao">
+
+    <select id="getMaxUid" resultType="int">
+        select max(uid) from user;
+    </select>
+
+    <select id="getUserByUid" resultType="User" parameterType="int">
+        select * from user where uid = #{uid};
+    </select>
+
+    <insert id="insertUser" parameterType="User">
+        insert into user(id,uid,account,username,nickname,password,professional,college,department,wechat,uuid,timetag,online,ip)
+         values (#{user.id},#{user.uid},#{user.account},#{user.username},#{user.nickname},#{user.password},#{user.professional},
+        #{user.college},#{user.department},#{user.wechat},#{user.uuid},#{user.timeTag},#{user.online},#{user.ip});
+    </insert>
+
+    <select id="getUserByAccount" resultType="User" parameterType="string">
+        select * from user where account = #{account};
+    </select>
+
+    <select id="getNicknameByAccount" resultType="string" parameterType="string">
+        select * from user where account = #{account};
+    </select>
+
+    <select id="getUserByUuid" resultType="User" parameterType="string">
+        select * from user where uuid = #{uuid};
+    </select>
+
+
+</mapper>

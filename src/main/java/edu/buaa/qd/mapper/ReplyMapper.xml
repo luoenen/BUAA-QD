@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.buaa.qd.dao.ReplyDao">
+
+    <select id="getMaxRid" resultType="int">
+        select max(rid) from reply;
+    </select>
+
+    <select id="getAllReplyForTid" resultType="Reply" parameterType="int">
+        select * from reply where tid = #{tid} order by rid desc;
+    </select>
+
+    <insert id="insertReply" parameterType="reply">
+        insert into reply(id,rid,content,tid,uid,username,ip,timeTag)
+        values(#{reply.id},#{reply.rid},#{reply.content},#{reply.tid},#{reply.uid},#{reply.username},#{reply.ip},#{reply.timeTag});
+    </insert>
+</mapper>
